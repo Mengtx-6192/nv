@@ -1,31 +1,39 @@
 <template>
   <div class="hello">
-      <!-- <div v-for="(item, i) in arr" :key="i">{{item.b}}</div> -->
-      <!-- <div v-if="show">{{msg}}</div>
-      <div v-show="show">{{msg}}</div> -->
-      <input type="text" v-model="input">
-      <button @click="send" v-text="msg"></button>
+    <div>{{msg}}</div>
+    <!-- <Public></Public> -->
+    <pub-com :class="{'font': isflag}" :son="msg" @on-son1="parentMethod"></pub-com>
   </div>
 </template>
 
 <script>
+  import Public from './public'
   export default {
-    props: ['msg'],
+    components: { 
+      'pubCom': Public  
+    },
     data() {
       return {
-        arr: [
-          {a:1, b:2},
-          {a:11, b:22},
-          {a:111, b:222}
-        ],
-        show: false,
-        input: '初始的值1'
+        isflag: true,
+        msg: '1.props和$emit',
+        // parent: '给我一个提示框'
       }
     },
     methods: {
-      send() {
-        this.$emit('on-emit', this.input)
+      parentMethod(v) {
+        this.isflag = v
       }
-    },
+    }
   }
 </script>
+
+<style scoped>
+  .hello {
+    width: 300px;
+    height: 200px;
+    border: 1px solid red
+  }
+  .font {
+    font-size: 20px
+  }
+</style>

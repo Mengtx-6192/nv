@@ -1,40 +1,34 @@
 <template>
-  <!-- html -->
-  <div class="app">
-      <Hello :msg="msg" @on-emit="receive"></Hello>
-      <!-- 1234 -->
-      <button @click="btn1">按钮1</button> 
-      <!-- 5678 -->
-      <button @click="btn2">按钮2</button>
-  </div>
+    <div class="app">
+        <div class="router">
+            <router-link class="link" to="/hello" tag="span">父子传值</router-link>
+            <router-link class="link" to="/brother" tag="span">兄弟传值</router-link>
+            <router-link class="link" to="/parent">祖孙传值</router-link>
+        </div>
+        <router-view />
+    </div>
 </template>
 
 <script>
-  // js
-  import Hello from './components/HelloWorld'
-  export default {
-    components: {
-        Hello
-    },
-    data() {
-        return {
-            msg: ''
-        }
-    },
-    methods: {
-        btn1() {
-            this.msg = 1234
-        },
-        btn2() {
-            this.msg = 5678
-        },
-        receive(v) {
-            console.log('父组件的方法',v);
-        }
+    export default {
+        
     }
-  }
 </script>
 
-<style>
-/* css */
+<style scoped>
+    .router {
+        background: #c3d2bd;
+        height: 80px;
+        line-height: 80px;
+        display: flex;
+        text-align: center;
+    }
+    .router .link {
+        flex: 1;
+        cursor: pointer;
+    }
+    .router-link-exact-active,
+    .active {
+        color: red
+    }
 </style>
