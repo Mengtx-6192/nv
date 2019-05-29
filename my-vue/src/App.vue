@@ -1,9 +1,9 @@
 <template>
     <div class="app">
         <div class="router">
+            <router-link class="link" to="/parent">祖孙传值</router-link>
             <router-link class="link" to="/hello" tag="span">父子传值</router-link>
             <router-link class="link" to="/brother" tag="span">兄弟传值</router-link>
-            <router-link class="link" to="/parent">祖孙传值</router-link>
         </div>
         <router-view />
     </div>
@@ -29,6 +29,14 @@
     }
     .router-link-exact-active,
     .active {
-        color: red
+        color: red;
+        text-shadow: -2px -2px #dd202005, 1px 1px #333;
+        transition: all .5s
     }
 </style>
+<style>
+* {
+    box-sizing: border-box
+}
+</style>
+

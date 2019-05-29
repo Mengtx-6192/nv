@@ -1,28 +1,27 @@
 <template>
     <div class="son">
-        son --- <!-- {{name}} -->
+        son组件 -----> <!-- {{name}} -->
         <!-- <GS></GS> -->
-        <GS v-bind="$attrs" v-on="$listeners"></GS>
-        <button @click="son">son</button>
+        <GS v-bind="$attrs" v-on="$listeners"></GS>  <!-- 2 -->
+        <button @click="son">son</button>   <!-- 2 -->
         <!-- {{name1}}------{{$attrs.name2}} -->
     </div>
 </template>
 
 <script>
-import GS from './grandson'
+    import GS from './grandson'
     export default {
         components: { GS },
-        // props: [ 'name1' ],
-        // inject: [ 'name' ],
+        // inject: [ 'name' ],  // 1
         // data() {
         //     return {
         //     }
         // },
-        // mounted() {
-            // console.log('son', this.name);
+        // mounted() { // 2
+            // console.log('son', this.$attrs);
         // },
         methods: {
-            son() {
+            son() { // 2
                 this.$emit('son', this.$attrs)
             }
         },
@@ -31,8 +30,9 @@ import GS from './grandson'
 
 <style scoped>
     .son { 
-        width: 223px;
-        height: 100px;
-        background: yellow
+        width: 70%;
+        padding: 20px;
+        background: yellow;
+        padding: 10px
     }
 </style>

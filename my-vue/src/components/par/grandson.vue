@@ -1,24 +1,24 @@
 <template>
     <div class="gs">
-        grandson 
-        {{name}}
-        <!-- >>>>{{$attrs.name1}} -->
-        <!-- <button @click="gs">gs</button> -->
+        grandson组件 ----->
+        {{name}}  <!-- 1 -->
+        <!-- {{$attrs.name1}} -->  <!-- 2 -->
+        <!-- <button @click="gs">gs</button> -->  <!-- 2 -->
     </div>
 </template>
 
 <script>
     export default {
-        inject: [ 'name' ],
+        inject: [ 'name' ],  // 1
         // data() {
         //     return {
         //     }
         // },
-        // mounted() {
+        // mounted() {  // 1
         //     console.log('m', this.$attrs.name3='xxx');
         // },
         // methods: {
-        //     gs() {
+        //     gs() { // 2
         //         this.$emit('gs', this.$attrs)
         //     }
         // },
@@ -27,9 +27,9 @@
 
 <style scoped>
     .gs { 
-        width: 169px;
+        width: 50%;
         height: 50px;
         background: #ccc;
-        margin-top: 10px;
+        padding: 20px
     }
 </style>

@@ -8,10 +8,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      redirect: '/hello'
-    },
+    // {
+    //   path: '/',
+    //   redirect: '/hello'
+    // },
     {
       path: '/hello',
       name: 'HelloWorld',

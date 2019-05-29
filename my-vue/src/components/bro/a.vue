@@ -21,5 +21,9 @@
 </script>
 
 <style scoped>
-
+    .a {
+        width: 50%;
+        padding: 20px;
+        background: orange;
+    }
 </style>

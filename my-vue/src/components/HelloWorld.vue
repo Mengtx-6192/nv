@@ -29,9 +29,11 @@
 
 <style scoped>
   .hello {
-    width: 300px;
+    width: 100%;
     height: 200px;
-    border: 1px solid red
+    border: 1px solid red;
+    padding: 20px;
+    background: #d3f35430
   }
   .font {
     font-size: 20px

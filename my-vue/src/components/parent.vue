@@ -1,9 +1,8 @@
 <template>
     <div class="parent">
-        Parent
-         <!-- <Son></Son> -->  <!-- provide用 -->
-        <!-- <div>接收子孙传来的值</div> -->
-        <Son :name1="name1" :name2="name2" @son="parent1" @gs="p2"></Son> <!-- $attrs用 -->
+        Parent组件 ----->
+         <!-- <Son></Son> -->  <!-- provide用 --> <!-- 1 -->
+        <Son :name1="name1" :name2="name2" @son="parent1" @gs="p2"></Son> <!-- $attrs用 --> <!-- 2 -->
     </div>
 </template>
 
@@ -11,16 +10,16 @@
     import Son from './par/son'
     export default {
         components: { Son },
-        provide: {
+        provide: {  // 1
             name: 'grandparent11',
         },
         data() {
-            return {
+            return { // 2
                 name1: '这是parent1',
                 name2: '这是parent2',
             }
         },
-        methods: {
+        methods: { // 2
             parent1(v) {
                 console.log('p1', v);
             },
@@ -33,8 +32,8 @@
 
 <style scoped>
     .parent {
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        padding: 20px;
         border: 1px solid red;
         background: skyblue
     }

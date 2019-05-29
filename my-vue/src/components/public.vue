@@ -7,7 +7,13 @@
 
 <script>
     export default {
-        props: [ 'son' ],
+        props: [ 'son' ], // 第一种写法
+        // props: {
+        //     son: {
+        //         type: String,
+        //         default: '默认的字符串'
+        //     }
+        // },     // 第二种写法， 比较严谨。 推荐
         data() {
             return {
                 isFlag: true
@@ -24,6 +30,9 @@
 
 <style scoped>
     .public {
-        border-top: 1px solid green
+        border-top: 1px solid green;
+        width: 50%;
+        padding: 20px;
+        background: greenyellow;
     }
 </style>

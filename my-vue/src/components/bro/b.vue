@@ -25,5 +25,9 @@
 </script>
 
 <style scoped>
-
+    .b {
+        width: 50%;
+        padding: 20px;
+        background: skyblue
+    }
 </style>
